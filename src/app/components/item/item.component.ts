@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,EventEmitter,  Input,Output, OnInit } from '@angular/core';
+import { productData } from 'src/app/Models/product-data';
+
 
 @Component({
   selector: 'item',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./item.component.scss']
 })
 export class ItemComponent implements OnInit {
-
+@Input() item!: productData;
+@Output() OnClickAddCard : EventEmitter<any> = new EventEmitter(); 
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+  OnclickFunc(){
+    const selectedProduct = {};
+    this.OnClickAddCard.emit(selectedProduct);
   }
 
 }

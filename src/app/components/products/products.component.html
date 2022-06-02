@@ -1,9 +1,6 @@
-<div class="container">
-    <item></item>
-    <item></item>
-    <item></item>
-    <item></item>
-    <item></item>
+
+<div class="container" *ngFor="let product of products">
+    <item [item]="product" (OnClickAddCard)="OnEventClickAddCard($event)"></item>
 </div>
 
 

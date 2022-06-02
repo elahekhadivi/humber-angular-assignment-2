@@ -9,6 +9,7 @@ import { AccountInfoComponent } from './components/account-info/account-info.com
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CartComponent } from './components/cart/cart.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 // angular material
 import { MatIconModule } from '@angular/material/icon';
@@ -40,7 +41,8 @@ import { OrderItemComponent } from './components/order-item/order-item.component
     MatIconModule,
     MatButtonModule,
     NoopAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,4 +14,8 @@ export class SearchBarComponent implements OnInit {
     
   }
 
+  OnSearch(event: any){
+this.textEntered.emit(event.target.value)
+  }
+
 }
