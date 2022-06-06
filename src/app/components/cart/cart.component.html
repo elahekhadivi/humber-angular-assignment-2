@@ -1,6 +1,6 @@
 <div class="container" >
-    <h1 style="text-align:center" *ngIf="cardProducts.length == 0">Cart is Empty</h1>
-    <cart-item *ngFor="let cardProduct of cardProducts" [cardItem]="cardProduct"></cart-item>
+    <div ><h1 *ngIf="cardProducts.length == 0">Cart is Empty</h1></div>
+    <div><cart-item *ngFor="let cardProduct of cardProducts" [cardItem]="cardProduct"></cart-item></div>
 </div>
 
 <div>
