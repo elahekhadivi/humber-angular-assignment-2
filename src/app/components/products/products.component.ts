@@ -9,7 +9,6 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class ProductsComponent implements OnInit {
   products: productData[] = [];
-  item!: productData;
   filteredItems: productData[]= [];
   constructor(private productsService: ProductsService) { }
 
@@ -19,13 +18,11 @@ export class ProductsComponent implements OnInit {
       this.products = res;
       this.filteredItems = this.products
     })
-
-    this.productsService.addToCard(this.item);
   }
+
   OnClickAddCardHandler(data: productData){
-    this.item = data;
+    this.productsService.addToCard(data);
     console.log("Data Name INFO : " + data.name);
-   
   }
 
   filterBySearch(text: string){

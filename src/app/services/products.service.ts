@@ -9,7 +9,8 @@ import { productData } from '../Models/product-data';
 })
 export class ProductsService {
   private listOfProducts : productData[] = [];
-  cartItems : orderData[] = [];
+  cartItems : productData[]=[]
+  //orderData[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -26,7 +27,12 @@ export class ProductsService {
   }
 
   addToCard(item: productData){
-    return this.listOfProducts.push(item);
+     this.cartItems.push(item);
+     console.log("item.name " + item.name);
+    
+  }
+  getCardItems(){
+    return this.cartItems;
   }
 
   clearCart() {

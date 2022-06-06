@@ -1,9 +1,5 @@
-<div class="container">
-    <cart-item></cart-item>
-    <cart-item></cart-item>
-    <cart-item></cart-item>
-    <cart-item></cart-item>
-    <cart-item></cart-item>
+<div class="container" >
+    <cart-item *ngFor="let cardProduct of cardProducts" [cardItem]="cardProduct"></cart-item>
 </div>
 
 <div>
