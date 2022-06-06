@@ -8,7 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'humber-angular-assignment-2';
 
-  filterBySearch(text: string){
-    console.log(text)
-      }
+
 }

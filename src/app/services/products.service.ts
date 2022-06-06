@@ -25,11 +25,18 @@ export class ProductsService {
  
   }
 
-  addToCard(data: any){
-    return this.cartItems.push(data);
+  addToCard(item: productData){
+    return this.listOfProducts.push(item);
   }
 
   clearCart() {
     this.cartItems = [];
+  }
+
+
+  onSearch() {
+    // http call to retrieve list of products
+    return this.http.get('./assets/product-data.json') as Observable<any>;
+    
   }
 }

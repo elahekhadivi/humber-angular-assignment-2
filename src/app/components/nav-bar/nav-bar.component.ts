@@ -14,6 +14,7 @@ export class NavBarComponent {
   ngOnInit(): void {
   }
   OnSearch(text: string){
-console.log(text)
+    this.searchedText.emit(text)
+//console.log(text)
 }
 }

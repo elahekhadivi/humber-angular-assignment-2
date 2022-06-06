@@ -1,6 +1,6 @@
-
-<div class="container" *ngFor="let product of products">
-    <item [item]="product" (OnClickAddCard)="OnEventClickAddCard($event)"></item>
+<nav-bar title="Humber e-store" (searchedText)="filterBySearch($event)"></nav-bar>
+<div class="container" *ngFor="let product of filteredItems">
+    <item [item]="product" (OnClickAddCard)="OnClickAddCardHandler($event)"></item>
 </div>
 
 

@@ -16,8 +16,8 @@ export class ItemComponent implements OnInit {
 
   }
   OnclickFunc(){
-    const selectedProduct = {};
-    this.OnClickAddCard.emit(selectedProduct);
+    //console.log(this.item.name );
+    this.OnClickAddCard.emit(this.item);
   }
 
 }

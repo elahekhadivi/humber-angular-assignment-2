@@ -8,21 +8,37 @@ import { ProductsService } from 'src/app/services/products.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  products: any;
-  selectedProductList: Array<productData> = [];
+  products: productData[] = [];
+  item!: productData;
+  filteredItems: productData[]= [];
   constructor(private productsService: ProductsService) { }
 
   ngOnInit(): void {
      this.productsService.getProducts().subscribe((res: any) =>
     {
       this.products = res;
-
+      this.filteredItems = this.products
     })
 
-    this.productsService.addToCard(this.selectedProductList);
+    this.productsService.addToCard(this.item);
   }
-  OnEventClickAddCard(data: any){
-    this.selectedProductList.push(data);
-    return this.selectedProductList;
+  OnClickAddCardHandler(data: productData){
+    this.item = data;
+    console.log("Data Name INFO : " + data.name);
+   
+  }
+
+  filterBySearch(text: string){
+  
+    if (text !== "") {
+      this.filteredItems = this.products.filter(product => {
+        const lowerCaseText = text.toLowerCase();
+        const lowerCaseProductName = product.name.toLowerCase();
+        return lowerCaseProductName.includes(lowerCaseText);
+      })
+    } else {
+      this.filteredItems = this.products;
+    }
+    console.log("Entered Text INFO : "+ text)
   }
 }
