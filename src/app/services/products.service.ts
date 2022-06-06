@@ -22,7 +22,7 @@ export class ProductsService {
 
   getOrderData() {
    
-   return this.http.get('/assets/order-data.json');
+   return this.http.get('/assets/order-data.json') as Observable<any>;
  
   }
 

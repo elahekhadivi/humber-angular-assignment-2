@@ -1,5 +1,3 @@
 <div class="container">
-    <order-item></order-item>
-    <order-item></order-item>
-    <order-item></order-item>
+    <order-item *ngFor="let order of orders" [order]="order"></order-item>
 </div>

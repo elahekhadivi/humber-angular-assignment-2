@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { orderData } from 'src/app/Models/order-data';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'orders',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./orders.component.scss']
 })
 export class OrdersComponent implements OnInit {
-
-  constructor() { }
+  orders : orderData[] =[]
+  constructor(private productsService: ProductsService) { }
 
   ngOnInit(): void {
+    this.productsService.getOrderData().subscribe((res:any) =>{
+      this.orders = res;
+    })
   }
 
 }
